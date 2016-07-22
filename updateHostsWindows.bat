@@ -13,8 +13,8 @@ del %WINDIR%\System32\drivers\etc\hosts.skel
 	)
 	c:
 	cd c:\hoststmp
-	echo. >> hosts
 	wget --output-file=drugs.log --no-check-certificate https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts hosts
+ren hosts.1 hosts
 echo 127.0.0.1 DefaultWebsite website >> hosts
 echo. >> hosts
 echo #Added by Trouba & Glenn vvvvvv >> hosts
