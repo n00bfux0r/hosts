@@ -14,14 +14,10 @@ if not exist "%WINDIR%\System32\drivers\etc\hosts.skel" (
 	)
 	c:
 	cd c:\hoststmp
-	wget --output-file=.log https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-	COPY hosts %WINDIR%\System32\drivers\etc\
-echo #<localhost> >> hosts
+	wget --output-file=drugs.log https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 echo 127.0.0.1 DefaultWebsite website >> hosts
-echo #</localhost> >> hosts
 echo. >> hosts
 echo #Added by Trouba & Glenn vvvvvv >> hosts
-echo #<Windows-10-blocks> >> hosts
 echo 127.0.0.1 134.170.30.202 >> hosts
 echo 127.0.0.1 137.116.81.24 >> hosts
 echo 127.0.0.1 65.39.117.230 >> hosts
@@ -141,9 +137,7 @@ echo 127.0.0.1 watson.telemetry.microsoft.com.nsatc.net >> hosts
 echo 127.0.0.1 wes.df.telemetry.microsoft.com >> hosts
 echo 127.0.0.1 www.go.microsoft.akadns.net >> hosts
 echo 127.0.0.1 www.msftncsi.com >> hosts
-echo #</Windows-10-blocks> >> hosts
 echo. >> hosts
-echo #<custom-added-blocks> >> hosts
 echo 127.0.0.1 www.newsoftwares.net >> hosts
 echo 127.0.0.1 newsoftwares.net >> hosts
 echo 127.0.0.1 www.online-update.com >> hosts
@@ -250,12 +244,12 @@ echo 127.0.0.1 update98.com >> hosts
 echo 127.0.0.1 update99.com >> hosts
 echo 127.0.0.1 www.dinnerwithmariah.com >> hosts
 echo 127.0.0.1 dinnerwithmariah.com >> hosts
-echo #</custom-added-blocks> >> hosts
 echo #Added by Trouba & Glenn ^^^^^^ >> hosts
 echo. >> hosts
 echo 127.0.0.1 ServerInfo httpd.info >> hosts
 echo 127.0.0.1 bandicam.com >> hosts
 echo 127.0.0.1 ssl.bandisoft.com >> hosts
+	COPY hosts %WINDIR%\System32\drivers\etc\
 	ipconfig /flushdns
 		ipconfig /flushdns
 			ipconfig /flushdns
