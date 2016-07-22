@@ -4,9 +4,7 @@
 :: YOU NEED RUNNING THIS BAT FILE IN COMMAND LINE PROMPT WITH ADMINISTRATOR PRIVILIGES
 :: WGET NEEDS TO BE INSTALLED.
 @ECHO OFF
-del %WINDIR%\System32\drivers\etc\hosts.skel
-	MOVE %WINDIR%\System32\drivers\etc\hosts %WINDIR%\System32\drivers\etc\hosts.skel
-	GOTO :CLEARDNS
+del %WINDIR%\System32\drivers\etc\hosts
 :CLEARDNS
 	if not exist "C:\hoststmp" (
 		mkdir c:\hoststmp\
