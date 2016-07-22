@@ -4,17 +4,17 @@
 :: YOU NEED RUNNING THIS BAT FILE IN COMMAND LINE PROMPT WITH ADMINISTRATOR PRIVILIGES
 :: WGET NEEDS TO BE INSTALLED.
 @ECHO OFF
-if not exist "%WINDIR%\System32\drivers\etc\hosts.skel" (
+del %WINDIR%\System32\drivers\etc\hosts.skel
 	MOVE %WINDIR%\System32\drivers\etc\hosts %WINDIR%\System32\drivers\etc\hosts.skel
 	GOTO :CLEARDNS
-)
 :CLEARDNS
 	if not exist "C:\hoststmp" (
 		mkdir c:\hoststmp\
 	)
 	c:
 	cd c:\hoststmp
-	wget --output-file=drugs.log https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+	echo. >> hosts
+	wget --output-file=drugs.log https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts hosts
 echo 127.0.0.1 DefaultWebsite website >> hosts
 echo. >> hosts
 echo #Added by Trouba & Glenn vvvvvv >> hosts
