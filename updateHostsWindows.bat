@@ -12,6 +12,8 @@ if not exist "%WINDIR%\System32\drivers\etc\hosts.skel" (
 	if not exist "C:\hoststmp" (
 		mkdir c:\hoststmp\
 	)
+	c:
+	cd c:\hoststmp
 	wget --output-file=.log https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 	COPY hosts %WINDIR%\System32\drivers\etc\
 echo #<localhost> >> hosts
